@@ -9,8 +9,6 @@ const sequence = {
     get id() { return this._id++ }
 }
 
-
-
 app.use(express.json())
 
 
@@ -30,7 +28,12 @@ app.post('/scraps', (req, res) => {
     return res.json(scrap)
 })
 
-// app.put()
+app.put('scrap/:id', (req, res) => {
+    const id = req.params
+    const { title, message } = req.body
+
+
+})
 
 // app.delete()
 
