@@ -1,13 +1,39 @@
-console.log('teste');
+const express = require('express')
+// const { response } = require('express')
+const app = express()
+const porta = 3333
+const scraps = []
 
-// isso é nesse daqui que tem que mexer
-// ae carai
+const sequence = {
+    _id: 1,
+    get id() { return this._id++ }
+}
 
-// cursing is not allowed…  Te joga no terminal
 
-// i'm a god, i'm able to use an inexistent feature in vscode
-// what do you need?
 
-// Well he can't connect to this, actually
+app.use(express.json())
 
-// 🤔️
+
+app.get('/scraps', (req, res) => {
+
+    return res.json(scraps)
+})
+
+app.post('/scraps', (req, res) => {
+    let id = sequence.id
+    const { title, message } = req.body
+    const scrap = { id, title, message }
+
+
+    scraps.push(scrap)
+
+    return res.json(scrap)
+})
+
+// app.put()
+
+// app.delete()
+
+app.listen(porta, () => {
+    console.log(`🚀 Methods gallore! 🚀`)
+});
