@@ -1,0 +1,13 @@
+{
+  "name": "api-scrapbook",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "uuidv4": "^6.2.0"
+  }
+}
