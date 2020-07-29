@@ -1,0 +1,10 @@
+
+// Retorno com const id = req.params
+
+{
+    "id": {
+      "id": "2"
+    },
+    "title": "Cenobita",
+    "message": "Hellraiser"
+  }
