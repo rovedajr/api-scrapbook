@@ -4,12 +4,11 @@ const app = express()
 const porta = 3333
 const scraps = []
 
-const sequence = {
-    _id: 1,
-    get id() { return this._id++ }
-}
-
 console.log(sequence.id);
+
+// Right, middlewares...
+
+
 
 app.use(express.json())
 
