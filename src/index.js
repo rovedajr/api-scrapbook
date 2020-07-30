@@ -9,7 +9,7 @@ const scraps = []
 function logRequests(req, res, next) {
     const { method, url } = req;
 
-    const logLabel = `[${method.toUpperCase()}] ${url}`
+    const logLabel = `${method}`
 
     console.time(logLabel)
 
@@ -30,7 +30,7 @@ function validateProjectId(req, res, next) {
 }
 
 
-function emptyId(req, res, next) {
+function emptyMessageOrTitle(req, res, next) {
 
     const { title, message } = req.body
 
@@ -54,7 +54,7 @@ app.get('/scraps', (req, res) => {
     return res.json(scraps)
 })
 
-app.post('/scraps', emptyId, (req, res) => {
+app.post('/scraps', emptyMessageOrTitle, (req, res) => {
 
     const { title, message } = req.body
 

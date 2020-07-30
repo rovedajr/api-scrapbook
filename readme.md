@@ -8,6 +8,8 @@ Criar:
 * Método para deletar recados;
 * Filtro de recados por título
 
-* Incluir middleware que faz log e calcula o tempo das requisições.
-* Incluir middleware que valida se o uid do projeto é válido.
+* * Incluir middleware que faz log e calcula o tempo das requisições.
+
+* * Incluir middleware que valida se o uid do projeto é válido.
+
 * * Incluir middleware que não adiciona um scrap com titulo e/ou mensagem vazios.
