@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors')
 const { uuid, isUuid } = require('uuidv4')
 const app = express()
 const porta = 3333
@@ -42,7 +43,7 @@ function emptyMessageOrTitle(req, res, next) {
 
 }
 
-
+app.use(cors)
 app.use(express.json())
 
 app.use(logRequests)
@@ -54,7 +55,7 @@ app.get('/scraps', (req, res) => {
     return res.json(scraps)
 })
 
-app.post('/scraps', emptyMessageOrTitle, (req, res) => {
+app.post('/scraps', emptyMessageOrTitle, (req, res, next) => {
 
     const { title, message } = req.body
 
@@ -65,6 +66,7 @@ app.post('/scraps', emptyMessageOrTitle, (req, res) => {
     scraps.push(scrap)
 
     return res.json(scrap)
+    next()
 })
 
 app.put('/scraps/:id', validateProjectId, (req, res) => {
@@ -107,7 +109,7 @@ app.delete('/scraps/:id', validateProjectId, (req, res) => {
 
     scraps.splice(scrapIndex, 1)
 
-    return res.json(scrap)
+    // return res.json(scrap)
 
 
 })
