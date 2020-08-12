@@ -70,6 +70,6 @@ app.delete("/scraps/:id", (request, response) => {
 
 const port = process.env.PORT || 3333;
 
-app.listen(3333, () => {
+app.listen(port, () => {
     console.log(`Server up and running on PORT ${port}`);
 });
