@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express = require("express");
 const cors = require("cors");
 const { response } = require("express");
@@ -66,7 +68,7 @@ app.delete("/scraps/:id", (request, response) => {
     return response.status(204).send();
 });
 
-const port = 3333;
+const port = process.env.PORT || 3333;
 
 app.listen(3333, () => {
     console.log(`Server up and running on PORT ${port}`);
